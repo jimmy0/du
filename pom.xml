@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.lzm</groupId>
+	<artifactId>du</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>du_web</module>
+		<module>du_service</module>
+		<module>du_api</module>
+	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring.version>4.3.9.RELEASE</spring.version>
+		<mybatis.version>3.2.2</mybatis.version>
+		<mybatis-spring.version>1.2.0</mybatis-spring.version>
+		<jstl.version>1.2</jstl.version>
+		<activemq.version>5.14.5</activemq.version>
+		<dubbo.version>2.5.10</dubbo.version>
+		<zkclient.version>0.10</zkclient.version>
+		<fastjson.version>1.2.47</fastjson.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.24</version>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>${dubbo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.101tec</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>${zkclient.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.lzm</groupId>
+				<artifactId>du_api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+				<version>3.6.1</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>
